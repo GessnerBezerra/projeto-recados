@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inicio-2">
+      <h1 id="titulo-2"></h1>
+      <div id="sair">
+        <button id="botaoSair" type="button">SAIR</button>
+      </div>
+    </div>
+    <section id="principal">
+        <h1>Meus Recados</h1>
+
+    <form id="recados">
+           
+            <input type="text" name="nome" class="campo_informacoes" id="descricao" placeholder="Descrição" > 
+            <input type="text" name="nome" class="campo_informacoes" id="detalhamento" placeholder="Detalhamento" >
+            <input type="submit" value="Salvar" id="enviar_info">
+            <input type="button" value="Atualizar" id="botao_atualizar">
+            <input type="button" value="Cancelar" id="botao_cancelar">
+    </form>
+
+    <table id="tabela-registros">
+      <tr>
+        <th>#</th>
+        <th>Descrição</th>
+        <th>Detalhes</th>
+        <th>Ação</th>
+      </tr>
+    </table>
+    </section>
+    <script src="./js/home.js"></script>
+</body>
+</html>
