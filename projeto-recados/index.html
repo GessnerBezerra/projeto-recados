@@ -5,27 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/projeto-recados/imagens/msg.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <title>Recados - Acessar</title>
 </head>
 
 <body>
     <main class="conteudo">
-        <section class="primeira-coluna">
+        <section class="primeira-coluna-index">
         </section>
 
 
-        <section class="segunda-coluna">
-            <div class="row"></div>
+        <section class="segunda-coluna-index">
             <div class="row">
                 <h2 class="titulo">Entrar no Sistema</h2>
                 <p class="descricao">Utilize sua conta de E-mail:</p>
 
                 <form class="formulario">
-                    <input type="email" placeholder="E-mail" class="acesso-conta" id="input-acesso-email">
-                    <input type="password" placeholder="Senha" class="acesso-conta" id="input-acesso-senha">
+
+                    <label for="input-email" id="label-email">E-mail:</label>
+                    <input type="email" placeholder="Insira seu e-mail" class="acesso-conta" id="input-acesso-email">
+
+                    <label for="input-email" id="label-email">Senha:</label>
+                    <input type="password" placeholder="Insira sua senha" class="acesso-conta" id="input-acesso-senha">
+                    
                     <button type="submit" class="btn" value="acessar Conta" id="btn-acessar">Acessar</button>
                 </form>
+                <a href="./signup.html">Clique aqui para criar sua conta</a>
             </div>
         </section>
     </main>

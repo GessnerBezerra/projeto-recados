@@ -112,6 +112,7 @@ function limparCampos(){
     
     inputTitulo.value = '';
     inputDescricao.value = '';
+    inputTitulo.focus();
 }
 
 
@@ -124,7 +125,7 @@ function salvarNoStorage(lst_recados){
 function logOut(){
     window.sessionStorage.removeItem('login');
     window.sessionStorage.removeItem('dados-usuario');
-    window.location = './index.html';
+    window.location = './sign-out.html';
 };
 
 
