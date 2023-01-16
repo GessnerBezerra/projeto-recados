@@ -1,7 +1,9 @@
 
+  let animationArea = document.querySelector('.boot');
 
 window.addEventListener("DOMContentLoaded", () =>{
-    let animationArea = document.querySelector('.boot');
+
+  
 
         let animationObject = bodymovin.loadAnimation({
             container: animationArea,
@@ -11,7 +13,33 @@ window.addEventListener("DOMContentLoaded", () =>{
             autoloadSegments: false,
             path:'/projeto-recados/css/animacions/100378-bye-animation.json'
         });
-    document.getElementById('txt').innerHTML = "Você será direcionado para a pagina de login em 05 segundos";
+
+        var duration = 60 * 5; // Converter para segundos
+
+        display = document.getElementById('txt'); // selecionando a div
+
+        contador(duration, display); // iniciando o timer
+
+       
     setTimeout(()=>{
-    window.location = './index.html';}, 5000);
+  
+    window.location = './index.html';
+  }, 6500);
 });
+
+
+function contador(duration, display) {
+
+  var timer = duration, seconds;
+  
+  setInterval(function () {
+
+      seconds = parseInt(timer % 6, 10);
+
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display.innerHTML = "Você será direcionado para a pagina de login em "+ seconds +" segundos";
+      if (--timer < 0) {
+          timer = duration;
+      }
+  }, 1000);
+}

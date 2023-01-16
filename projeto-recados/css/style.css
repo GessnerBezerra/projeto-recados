@@ -25,6 +25,7 @@
   left: 0;
   background-image: url(../imagens/recados.jpg);
   background-size:cover;
+  border-radius: 0% 2% 2% 0%;
 }
 
 .segunda-coluna-index {
@@ -41,6 +42,8 @@
   right: 0;
   background-image: url(../imagens/recados.jpg);
   background-size:cover;
+  border: 1px solid #eee;
+  border-radius: 2% 0% 0% 2%;
 }
 
 .segunda-coluna {
@@ -48,18 +51,19 @@
   height: 100vh;
   position: absolute;
   left: 0;
+  
 }
 
 .segunda-coluna-sair {
   width: 50vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  position: absolute;
     top: 10vh;
-    right: 50vw;
+    right: 55vw;
   align-items: center;
+  
 }
 
 div.row {
@@ -71,7 +75,14 @@ div.row {
   align-items: center;
   /* padding: 30px; */
   /* position: absolute; */
-  bottom: 30px;
+  bottom: 10px;
+}
+
+#txt{
+  text-align: center;
+  color: #ca4e1d;
+  font-size: larger;
+  text-shadow: 15px 5px 10px rgb(208, 97, 49);
 }
 
 div.row.container-cadastro {
@@ -79,24 +90,31 @@ div.row.container-cadastro {
   display: flex;
   justify-content: flex-end;
   position: relative;
+  flex-direction: column;
+  align-items: center;
+  bottom: 10px;
 }
 
 div.row.container-sair {
-  height: 60vh;
+  
+  height: 30vh;
   display: flex;
   justify-content: flex-end;
   position: relative;
+  flex-direction: column;
+  align-items: center;
+  bottom: 10px;
+    left: 33px;;
 }
 .boot{
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     background-size: cover;
-    /* background-image: url(/css/animacions/100378-bye-animation.json); */
-  background-image: url(/projeto-recados/css/animacions/100378-bye-animation.json);
+  /* background-image: url(/projeto-recados/css/animacions/100378-bye-animation.json); */
 }
 
 .titulo {
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 15px;
 }
 
@@ -109,30 +127,24 @@ div.row.container-sair {
   margin: 20px;
 }
 
-input.cadastro {
+input.cadastro, input {
   display: block;
   margin-bottom: 15px;
-  width: 40vw;
-}
-
-input {
-  width:45vw;
+  width: 35vw;
   height: 7vh;
-  font-size: 15px;
-  padding-left: 5px;
-  border: 1px solid darkgrey;
-  color: black;
-  outline: none;
+  box-shadow: 15px 5px 20px rgba(218, 98, 24, 0.4);
+  border: 2px solid #eee;
+  border-radius: 0% 2% 2% 0%;
 }
 
 input:hover {
   border: 1px solid grey;
 }
 
-input.btn-cadastro {
+input.btn-cadastro, button.btn {
   display: block;
   margin-top: 20px;
-  width: 40vw;
+  width: 35vw;
   height: 40px;
   background: #04911c;
   color: #fff;
@@ -144,7 +156,7 @@ input.btn-cadastro {
   cursor: pointer;
 }
 
-button.btn {
+/* button.btn {
   display: block;
   margin-top: 20px;
   width: 46vw;
@@ -157,7 +169,7 @@ button.btn {
   opacity: 0.8;
   font-size: 18px;
   cursor: pointer;
-}
+} */
 
 button:hover {
   opacity: 1;
