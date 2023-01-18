@@ -62,7 +62,7 @@ function adicionarNovoRegistro(){
     listaRecados.push(recados);
     
 
-    // window.location.reload();
+    window.location.reload();
     
     
     salvarNaTabela(listaRecados); 
