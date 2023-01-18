@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () =>{
             loop: true,
             autoplay: true,
             autoloadSegments: false,
-            path:'/projeto-recados/projeto-recados/css/animacions/100378-bye-animation.json'
+            path:'/projeto-recados/css/animacions/100378-bye-animation.json'
         });
 
         var duration = 60 * 5; // Converter para segundos
