@@ -120,7 +120,7 @@ function salvarNaTabela(dadosrecados){
             
             cardDados.appendChild(novocard)
 
-            novocard.setAttribute('class', 'card informacao');
+            novocard.setAttribute('class', 'card');
             novocard.setAttribute('id', dadosrecados[indice]);
             registro.innerHTML = dadosrecados[indice].indice ;
             titulo.innerHTML = dadosrecados[indice].titulorecados;
