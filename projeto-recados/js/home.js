@@ -30,6 +30,8 @@ let botaoSair = document.querySelector('#botaoSair');
 
 let tabelaDados = document.querySelector('#tabela-registros');
 
+let cardDados = document.querySelector("#row-card");
+
 
 /////////////////////*************EVENTOS****************///////////////////////////
 
@@ -80,30 +82,56 @@ function salvarNaTabela(dadosrecados){
             window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
         
     
-            let novaLinha = document.createElement('tr');
-            let colunaRegistro = document.createElement('td');
-            let colunaTitulo = document.createElement('td');
-            let colunaDescricao = document.createElement('td');
-            let colunaAcoes = document.createElement('td');
+            // let novaLinha = document.createElement('tr');
+            // let colunaRegistro = document.createElement('td');
+            // let colunaTitulo = document.createElement('td');
+            // let colunaDescricao = document.createElement('td');
+            // let colunaAcoes = document.createElement('td');
 
-            novaLinha.appendChild(colunaRegistro);
-            novaLinha.appendChild(colunaTitulo);
-            novaLinha.appendChild(colunaDescricao);
-            novaLinha.appendChild(colunaAcoes);
+            // novaLinha.appendChild(colunaRegistro);
+            // novaLinha.appendChild(colunaTitulo);
+            // novaLinha.appendChild(colunaDescricao);
+            // novaLinha.appendChild(colunaAcoes);
             
-            tabelaDados.appendChild(novaLinha)
+            // tabelaDados.appendChild(novaLinha)
 
-            novaLinha.setAttribute('class', 'informacoes');
-            novaLinha.setAttribute('id', dadosrecados[indice]);
-            colunaRegistro.innerHTML = dadosrecados[indice].indice ;
-            colunaTitulo.innerHTML = dadosrecados[indice].titulorecados;
-            colunaDescricao.innerHTML = dadosrecados[indice].descricaorecados;
-            colunaAcoes.innerHTML = `
+            // novaLinha.setAttribute('class', 'informacoes');
+            // novaLinha.setAttribute('id', dadosrecados[indice]);
+            // colunaRegistro.innerHTML = dadosrecados[indice].indice ;
+            // colunaTitulo.innerHTML = dadosrecados[indice].titulorecados;
+            // colunaDescricao.innerHTML = dadosrecados[indice].descricaorecados;
+            // colunaAcoes.innerHTML = `
+            // <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
+            // <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
+            //                         `
+
+            // ;
+            
+            let novocard = document.createElement('tr');
+            let registro = document.createElement('td');
+            let titulo = document.createElement('td');
+            let descricao = document.createElement('td');
+            let acoes = document.createElement('td');
+
+            novocard.appendChild(registro);
+            novocard.appendChild(titulo);
+            novocard.appendChild(descricao);
+            novocard.appendChild(acoes);
+            
+            cardDados.appendChild(novocard)
+
+            novocard.setAttribute('class', 'card informacao');
+            novocard.setAttribute('id', dadosrecados[indice]);
+            registro.innerHTML = dadosrecados[indice].indice ;
+            titulo.innerHTML = dadosrecados[indice].titulorecados;
+            descricao.innerHTML = dadosrecados[indice].descricaorecados;
+            acoes.innerHTML = `
             <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
             <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
                                     `
 
             ;
+
         }
     }
 }

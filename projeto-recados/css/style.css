@@ -78,6 +78,40 @@ div.row {
   bottom: 10px;
 }
 
+.row-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  div#row {
+  height: 90vh;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+   padding: 30px; 
+  /* position: absolute;
+  bottom: 10px; */
+}  
+
+
+#row-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+border-radius: 5px;
+box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+padding: 30px;
+margin: 20px;
+width: 400px;
+transition: all 0.3s ease-out;
+}
+
 #txt{
   text-align: center;
   color: #ca4e1d;
