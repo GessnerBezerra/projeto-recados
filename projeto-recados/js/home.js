@@ -61,14 +61,14 @@ function adicionarNovoRegistro(){
 
     listaRecados.push(recados);
     
-
-    window.location.reload();
     
+    // salvarNaTabela(listaRecados); 
     
-    salvarNaTabela(listaRecados); 
+    window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
+   
     limparCampos();
    
-    window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
+    window.location.reload();
 }
 
 
@@ -82,55 +82,89 @@ function salvarNaTabela(dadosrecados){
             window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
         
     
-            let novaLinha = document.createElement('tr');
-            let colunaRegistro = document.createElement('td');
-            let colunaTitulo = document.createElement('td');
-            let colunaDescricao = document.createElement('td');
-            let colunaAcoes = document.createElement('td');
+            // let novaLinha = document.createElement('tr');
+            // let colunaRegistro = document.createElement('td');
+            // let colunaTitulo = document.createElement('td');
+            // let colunaDescricao = document.createElement('td');
+            // let colunaAcoes = document.createElement('td');
 
-            novaLinha.appendChild(colunaRegistro);
-            novaLinha.appendChild(colunaTitulo);
-            novaLinha.appendChild(colunaDescricao);
-            novaLinha.appendChild(colunaAcoes);
+            // novaLinha.appendChild(colunaRegistro);
+            // novaLinha.appendChild(colunaTitulo);
+            // novaLinha.appendChild(colunaDescricao);
+            // novaLinha.appendChild(colunaAcoes);
             
-            tabelaDados.appendChild(novaLinha)
+            // tabelaDados.appendChild(novaLinha)
 
-            novaLinha.setAttribute('class', 'informacoes');
-            novaLinha.setAttribute('id', dadosrecados[indice]);
-            colunaRegistro.innerHTML = dadosrecados[indice].indice ;
-            colunaTitulo.innerHTML = dadosrecados[indice].titulorecados;
-            colunaDescricao.innerHTML = dadosrecados[indice].descricaorecados;
-            colunaAcoes.innerHTML = `
-            <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
-            <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
-                                    `
-
-            ;
-            
-            // let novocard = document.createElement('tr');
-            // let registro = document.createElement('td');
-            // let titulo = document.createElement('td');
-            // let descricao = document.createElement('td');
-            // let acoes = document.createElement('td');
-
-            // novocard.appendChild(registro);
-            // novocard.appendChild(titulo);
-            // novocard.appendChild(descricao);
-            // novocard.appendChild(acoes);
-            
-            // cardDados.appendChild(novocard)
-
-            // novocard.setAttribute('class', 'card');
-            // novocard.setAttribute('id', dadosrecados[indice]);
-            // registro.innerHTML = dadosrecados[indice].indice ;
-            // titulo.innerHTML = dadosrecados[indice].titulorecados;
-            // descricao.innerHTML = dadosrecados[indice].descricaorecados;
-            // acoes.innerHTML = `
+            // novaLinha.setAttribute('class', 'informacoes');
+            // novaLinha.setAttribute('id', dadosrecados[indice]);
+            // colunaRegistro.innerHTML = dadosrecados[indice].indice ;
+            // colunaTitulo.innerHTML = dadosrecados[indice].titulorecados;
+            // colunaDescricao.innerHTML = dadosrecados[indice].descricaorecados;
+            // colunaAcoes.innerHTML = `
             // <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
             // <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
             //                         `
 
             // ;
+            
+            
+            let sectionCard = document.createElement('section');
+            let divCardTtl = document.createElement('div');
+            let divCardTRst = document.createElement('div');
+            let divCardDsc = document.createElement('div');
+            let divCardAcao = document.createElement('div');
+            let labelRegistro = document.createElement('label');
+            let registro = document.createElement('p');
+            let labelTitulo = document.createElement('label');
+             let titulo = document.createElement('p');
+             let labelDescricao = document.createElement('label');
+             let descricao = document.createElement('p');
+             let labelAcao = document.createElement('label');
+             let acoes = document.createElement('td');
+            
+             divCardTtl.setAttribute('class', 'titulo-card');
+             divCardTRst.setAttribute('class', 'registro');
+             divCardDsc.setAttribute('class', 'descricao');
+             divCardAcao.setAttribute('class', 'acoes');
+
+             divCardTRst.appendChild(labelRegistro);
+             divCardTRst.appendChild(registro);
+
+             divCardTtl.appendChild(labelTitulo);
+             divCardTtl.appendChild(titulo);
+
+             divCardDsc.appendChild(labelDescricao);
+             divCardDsc.appendChild(descricao);
+
+             divCardAcao.appendChild(labelAcao);
+             divCardAcao.appendChild(acoes);
+
+             sectionCard.appendChild(divCardTRst);
+             sectionCard.appendChild(divCardTtl);
+             sectionCard.appendChild(divCardDsc);
+             sectionCard.appendChild(divCardAcao);
+            //  sectionCard.appendChild(labelDescricao);
+            //  sectionCard.appendChild(descricao);
+            //  sectionCard.appendChild(labelAcao);
+            //  sectionCard.appendChild(acoes);
+            
+             cardDados.appendChild(sectionCard);
+
+             sectionCard.setAttribute('class', 'card');
+             labelRegistro.setAttribute('id', dadosrecados[indice]);
+             labelRegistro.innerHTML = `Id: `
+             registro.innerHTML = dadosrecados[indice].indice ;
+             labelTitulo.innerHTML = `Descrição: `
+             titulo.innerHTML = dadosrecados[indice].titulorecados;
+             labelDescricao.innerHTML = `Detalhes: `
+             descricao.innerHTML = dadosrecados[indice].descricaorecados;
+             labelAcao.innerHTML = `Ações: `
+             acoes.innerHTML = `
+             <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
+             <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
+                                     `
+
+             ;
 
         }
     }
