@@ -151,14 +151,14 @@ function salvarNaTabela(dadosrecados){
              labelRegistro.setAttribute('id', dadosrecados[indice]);
              labelRegistro.innerHTML = `Id: `
              registro.innerHTML = dadosrecados[indice].indice ;
-             labelTitulo.innerHTML = `Descrição: `
+             labelTitulo.innerHTML = `Título: `
              titulo.innerHTML = dadosrecados[indice].titulorecados;
-             labelDescricao.innerHTML = `Detalhes: `
+             labelDescricao.innerHTML = `Descrição: `
              descricao.innerHTML = dadosrecados[indice].descricaorecados;
              labelAcao.innerHTML = `Ações: `
              acoes.innerHTML = `
-             <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
-             <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
+             <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar"><img src="imagens/edit.ico"></button></td>
+             <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar"><img src="imagens/recycle.ico"></button></td>
                                      `
 
              ;
@@ -232,6 +232,7 @@ function prepararEdicao(registroID){
     botaoAtualizar.setAttribute('style', 'display: inline-block');
     botaoAtualizar.setAttribute('onclick', `atualizarRegistro(${registroID})`);
     botaoCancelar.setAttribute('style', 'display: inline-block');
+    botaoCancelar.setAttribute('onclick', `cancelarEdicao()`);
     
     inputTitulo.value = listaRecados[registroID].titulorecados;
     inputDescricao.value = listaRecados[registroID].descricaorecados;
