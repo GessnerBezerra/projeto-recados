@@ -4,10 +4,10 @@
 
 <p align="center">
 
-<img src=./projeto-recados/imagens/prints_de_tela/home.jpg> <br />
+<img src=./projeto-recados/imagens/prints_de_tela/index.jpg> <br />
 
 <img src=./projeto-recados/imagens/prints_de_tela/criar_conta.jpg> <br /> 
  
 <img src=./projeto-recados/imagens/prints_de_tela/recados.jpg> <br />
 
-
+<img src=./projeto-recados/imagens/prints_de_tela/sair.jpg>
