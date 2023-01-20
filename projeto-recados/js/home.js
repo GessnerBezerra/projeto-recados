@@ -62,7 +62,7 @@ function adicionarNovoRegistro(){
     listaRecados.push(recados);
     
     
-    // salvarNaTabela(listaRecados); 
+    // salvarNaTabela(listaRecados); --> comentei pois estava repetindo os recados antes do reload
     
     window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
    
@@ -81,31 +81,32 @@ function salvarNaTabela(dadosrecados){
             dadosrecados[indice].indice = Number(indice)+1;
             window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
         
-    
-            // let novaLinha = document.createElement('tr');
-            // let colunaRegistro = document.createElement('td');
-            // let colunaTitulo = document.createElement('td');
-            // let colunaDescricao = document.createElement('td');
-            // let colunaAcoes = document.createElement('td');
+    /* ---------------------Parte do código caso eu quisesse colocar tabela no lugar do card--------
 
-            // novaLinha.appendChild(colunaRegistro);
-            // novaLinha.appendChild(colunaTitulo);
-            // novaLinha.appendChild(colunaDescricao);
-            // novaLinha.appendChild(colunaAcoes);
+             let novaLinha = document.createElement('tr');
+             let colunaRegistro = document.createElement('td');
+             let colunaTitulo = document.createElement('td');
+             let colunaDescricao = document.createElement('td');
+             let colunaAcoes = document.createElement('td');
+
+             novaLinha.appendChild(colunaRegistro);
+             novaLinha.appendChild(colunaTitulo);
+             novaLinha.appendChild(colunaDescricao);
+             novaLinha.appendChild(colunaAcoes);
             
-            // tabelaDados.appendChild(novaLinha)
+             tabelaDados.appendChild(novaLinha)
 
-            // novaLinha.setAttribute('class', 'informacoes');
-            // novaLinha.setAttribute('id', dadosrecados[indice]);
-            // colunaRegistro.innerHTML = dadosrecados[indice].indice ;
-            // colunaTitulo.innerHTML = dadosrecados[indice].titulorecados;
-            // colunaDescricao.innerHTML = dadosrecados[indice].descricaorecados;
-            // colunaAcoes.innerHTML = `
-            // <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
-            // <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
-            //                         `
+             novaLinha.setAttribute('class', 'informacoes');
+             novaLinha.setAttribute('id', dadosrecados[indice]);
+             colunaRegistro.innerHTML = dadosrecados[indice].indice ;
+             colunaTitulo.innerHTML = dadosrecados[indice].titulorecados;
+             colunaDescricao.innerHTML = dadosrecados[indice].descricaorecados;
+             colunaAcoes.innerHTML = `
+             <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar">Editar</button></td>
+             <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar">Apagar</button></td>
+                                     `
 
-            // ;
+             ;*/
             
             
             let sectionCard = document.createElement('section');
@@ -143,10 +144,6 @@ function salvarNaTabela(dadosrecados){
              sectionCard.appendChild(divCardTtl);
              sectionCard.appendChild(divCardDsc);
              sectionCard.appendChild(divCardAcao);
-            //  sectionCard.appendChild(labelDescricao);
-            //  sectionCard.appendChild(descricao);
-            //  sectionCard.appendChild(labelAcao);
-            //  sectionCard.appendChild(acoes);
             
              cardDados.appendChild(sectionCard);
 

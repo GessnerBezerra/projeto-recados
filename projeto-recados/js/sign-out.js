@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 
         var duration = 60 * 5; // Converter para segundos
 
-        display = document.getElementById('txt'); // selecionando a div
+        display = document.getElementById('txt'); // selecionando a div com ID "txt"
 
         contador(duration, display); // iniciando o timer
 

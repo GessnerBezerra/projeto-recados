@@ -73,13 +73,7 @@ div.row {
   position: relative;
   flex-direction: column;
   align-items: center;
-  /* padding: 30px; */
-  /* position: absolute; */
   bottom: 10px;
-
-  /*border-collapse: collapse;
-    width: 90%;
-    margin-top: 50px;*/
 }
 
 label{
@@ -103,16 +97,17 @@ label{
   flex-direction: column;
   align-items: center;
    padding: 30px; 
-  /* position: absolute;
-  bottom: 10px; */
 }  
 
 
 #row-card {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 90vw;
 }
 
 .card {
@@ -127,7 +122,6 @@ label{
   flex-direction: column;
   position: relative;
   align-items: stretch;
-  /* width: 300px; */
   background-color: moccasin;
 }
 
@@ -180,7 +174,6 @@ div.row.container-sair {
     height: 250px;
     width: 250px;
     background-size: cover;
-  /* background-image: url(/projeto-recados/css/animacions/100378-bye-animation.json); */
 }
 
 .titulo {
@@ -225,21 +218,6 @@ input.btn-cadastro, button.btn {
   font-size: 18px;
   cursor: pointer;
 }
-
-/* button.btn {
-  display: block;
-  margin-top: 20px;
-  width: 46vw;
-  height: 40px;
-  background: #04911c;
-  color: #fff;
-  border: 1px solid #eee;
-  box-shadow: 5px 5px 5px #eee;
-  text-shadow: none;
-  opacity: 0.8;
-  font-size: 18px;
-  cursor: pointer;
-} */
 
 button:hover {
   opacity: 1;
