@@ -1,14 +1,11 @@
-// let login = sessionStorage.getItem('dados-usuario', 'usuario');
-// tbClientes = JSON.parse(login)
-// if(tbClientes){
-//     alert('Você já está logado!');
-//     window.location = './home.html';
-// }
+let login =  window.sessionStorage.getItem('dados-usuario' || '[]');
 
 let formAcesso = document.querySelector('.formulario');
 let acesso_email = document.querySelector("#input-acesso-email");
 
 let acesso_senha = document.querySelector("#input-acesso-senha");
+
+document.addEventListener('DOMContentLoaded', verificaLogin(login));
 
 formAcesso.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -38,6 +35,15 @@ function acessaconta(){
         }
     }    
   }
+
+  function verificaLogin(login){
+        
+    if ((login != null))
+    {
+    alert('Você já está logado!');
+    window.location = './home.html';
+    } 
+}
   
   
   

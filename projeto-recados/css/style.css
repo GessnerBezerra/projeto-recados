@@ -268,6 +268,7 @@ button#inf_botao_editar{
   border: none;
   border-radius: 20px;
   color:white;
+  cursor: pointer;
 }
 
 button#inf_botao_apagar{
@@ -286,7 +287,6 @@ input#enviar_info{
   border-radius: 10px;
   cursor: pointer;
   color:white;
-  cursor: pointer;
 }
 
 input#botao_atualizar{
@@ -297,7 +297,6 @@ input#botao_atualizar{
   border-radius: 10px;
   cursor: pointer;
   color:white;
-  cursor: pointer;
   display: none;
 }
 
@@ -309,7 +308,6 @@ input#botao_cancelar{
   border-radius: 10px;
   cursor: pointer;
   color:white;
-  cursor: pointer;
   display: none;
 }
 
@@ -344,6 +342,7 @@ input#botao_cancelar{
   transform: scaleX(0);
   transform-origin:unset;
   transition: transform .25s ease;
+  cursor: pointer;
 }
 
 #botaoSair:hover::after {

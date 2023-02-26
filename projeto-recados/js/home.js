@@ -66,9 +66,8 @@ function adicionarNovoRegistro(){
     
     window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
    
-    limparCampos();
-   
     window.location.reload();
+    limparCampos();
 }
 
 
@@ -108,7 +107,7 @@ function salvarNaTabela(dadosrecados){
 
              ;*/
             
-            
+            /*------------------CARD DE RECADOS------------------------- */
             let sectionCard = document.createElement('section');
             let divCardTtl = document.createElement('div');
             let divCardTRst = document.createElement('div');
