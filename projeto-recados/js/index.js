@@ -40,7 +40,8 @@ function acessaconta(){
         
     if ((login != null))
     {
-    alert('Você já está logado!');
+    alert(`Você já está logado e será redirecionado de volta a pagina de recados, 
+    para retornar para a pagina de acesso, clique em sair!`);
     window.location = './home.html';
     } 
 }
