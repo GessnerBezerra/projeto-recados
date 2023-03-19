@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./imagens/msg.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./imagens/msg.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Recados - Acessar</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main class="conteudo">
-        <section class="primeira-coluna-index">
-        </section>
+      <section class="primeira-coluna-index"></section>
 
+      <section class="segunda-coluna-index">
+        <div class="row">
+          <h2 class="titulo">Entrar no Sistema</h2>
+          <p class="descricao">Utilize sua conta de E-mail:</p>
 
-        <section class="segunda-coluna-index">
-            <div class="row">
-                <h2 class="titulo">Entrar no Sistema </h2>
-                <p class="descricao">Utilize sua conta de E-mail:</p>
+          <form class="formulario">
+            <label for="input-email" id="label-email">E-mail:</label>
+            <input
+              type="email"
+              placeholder="Insira seu e-mail"
+              class="acesso-conta"
+              id="input-acesso-email"
+            />
 
-                <form class="formulario">
+            <label for="input-email" id="label-email">Senha:</label>
+            <input
+              type="password"
+              placeholder="Insira sua senha"
+              class="acesso-conta"
+              id="input-acesso-senha"
+            />
 
-                    <label for="input-email" id="label-email">E-mail:</label>
-                    <input type="email" placeholder="Insira seu e-mail" class="acesso-conta" id="input-acesso-email">
-
-                    <label for="input-email" id="label-email">Senha:</label>
-                    <input type="password" placeholder="Insira sua senha" class="acesso-conta" id="input-acesso-senha">
-                    
-                    <button type="submit" class="btn" value="acessar Conta" id="btn-acessar">Acessar</button>
-                </form>
-                <span>Para criar uma conta: <a href="./signup.html">Clique aqui</a></span>
-            </div>
-        </section>
+            <button
+              type="submit"
+              class="btn"
+              value="acessar Conta"
+              id="btn-acessar"
+            >
+              Acessar
+            </button>
+          </form>
+          <span
+            >Para criar uma conta: <a href="./signup.html">Clique aqui</a></span
+          >
+        </div>
+      </section>
     </main>
     <script src="./js/index.js"></script>
-</body>
-
+  </body>
 </html>

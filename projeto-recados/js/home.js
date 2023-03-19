@@ -1,86 +1,80 @@
-let login = window.sessionStorage.getItem('login');
+let login = window.sessionStorage.getItem("login");
 
-if(!login){
-    alert('Você deve logar antes!')
-    window.location = './index.html';
+if (!login) {
+  alert("Você deve logar antes!");
+  window.location = "./index.html";
 }
 
-let usuario = window.sessionStorage.getItem('dados-usuario');
-let listaUsuarios = JSON.parse(window.localStorage.getItem('dados-usuario'));
+let usuario = window.sessionStorage.getItem("dados-usuario");
+let listaUsuarios = JSON.parse(window.localStorage.getItem("dados-usuario"));
 let indiceUsuario;
 
 for (const indice in listaUsuarios) {
-
-    if(listaUsuarios[indice].usuario == usuario){
-        indiceUsuario = indice;
-    }
-};
+  if (listaUsuarios[indice].usuario == usuario) {
+    indiceUsuario = indice;
+  }
+}
 let listaRecados = listaUsuarios[indiceUsuario].recados;
 
-let formulario = document.querySelector('#recados');
+let formulario = document.querySelector("#recados");
 
-let inputTitulo = document.querySelector('#descricao');
-let inputDescricao = document.querySelector('#detalhamento');
+let inputTitulo = document.querySelector("#descricao");
+let inputDescricao = document.querySelector("#detalhamento");
 
-let botaoSalvar = document.querySelector('#enviar_info');
-let botaoAtualizar = document.querySelector('#botao_atualizar');
-let botaoCancelar = document.querySelector('#botao_cancelar')
+let botaoSalvar = document.querySelector("#enviar_info");
+let botaoAtualizar = document.querySelector("#botao_atualizar");
+let botaoCancelar = document.querySelector("#botao_cancelar");
 
-let botaoSair = document.querySelector('#botaoSair');
+let botaoSair = document.querySelector("#botaoSair");
 
-let tabelaDados = document.querySelector('#tabela-registros');
+let tabelaDados = document.querySelector("#tabela-registros");
 
 let cardDados = document.querySelector("#row-card");
 
-
 /////////////////////*************EVENTOS****************///////////////////////////
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    adicionarNovoRegistro();
+  adicionarNovoRegistro();
 });
 
-document.addEventListener('DOMContentLoaded', salvarNaTabela(listaRecados));
+document.addEventListener("DOMContentLoaded", salvarNaTabela(listaRecados));
 
-botaoSair.addEventListener('click', logOut);
+botaoSair.addEventListener("click", logOut);
 
 //////////////////////*******FUNÇÕES**********////////////////////////////////////////////////
 
-function adicionarNovoRegistro(){
-    
-    
-    let titulorecados = inputTitulo.value;
-    let descricaorecados = inputDescricao.value;
+function adicionarNovoRegistro() {
+  let titulorecados = inputTitulo.value;
+  let descricaorecados = inputDescricao.value;
 
-    let recados = {
-        indice:null,
-        titulorecados,
-        descricaorecados
-    }
+  let recados = {
+    indice: null,
+    titulorecados,
+    descricaorecados,
+  };
 
-    listaRecados.push(recados);
-    
-    
-    // salvarNaTabela(listaRecados); --> comentei pois estava repetindo os recados antes do reload
-    
-    window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
-   
-    window.location.reload();
-    limparCampos();
+  listaRecados.push(recados);
+
+  // salvarNaTabela(listaRecados); --> comentei pois estava repetindo os recados antes do reload
+
+  window.localStorage.setItem("dados-usuario", JSON.stringify(listaUsuarios));
+
+  window.location.reload();
+  limparCampos();
 }
 
+function salvarNaTabela(dadosrecados) {
+  if (dadosrecados.length > 0) {
+    for (const indice in dadosrecados) {
+      dadosrecados[indice].indice = Number(indice) + 1;
+      window.localStorage.setItem(
+        "dados-usuario",
+        JSON.stringify(listaUsuarios)
+      );
 
-
-function salvarNaTabela(dadosrecados){
-
-    if(dadosrecados.length > 0) { 
-
-        for (const indice in dadosrecados) {
-            dadosrecados[indice].indice = Number(indice)+1;
-            window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
-        
-    /* ---------------------Parte do código caso eu quisesse colocar tabela no lugar do card--------
+      /* ---------------------Parte do código caso eu quisesse colocar tabela no lugar do card--------
 
              let novaLinha = document.createElement('tr');
              let colunaRegistro = document.createElement('td');
@@ -106,149 +100,135 @@ function salvarNaTabela(dadosrecados){
                                      `
 
              ;*/
-            
-            /*------------------CARD DE RECADOS------------------------- */
-            let sectionCard = document.createElement('section');
-            let divCardTtl = document.createElement('div');
-            let divCardTRst = document.createElement('div');
-            let divCardDsc = document.createElement('div');
-            let divCardAcao = document.createElement('div');
-            let labelRegistro = document.createElement('label');
-            let registro = document.createElement('p');
-            let labelTitulo = document.createElement('label');
-             let titulo = document.createElement('p');
-             let labelDescricao = document.createElement('label');
-             let descricao = document.createElement('p');
-             let labelAcao = document.createElement('label');
-             let acoes = document.createElement('td');
-            
-             divCardTtl.setAttribute('class', 'titulo-card');
-             divCardTRst.setAttribute('class', 'registro');
-             divCardDsc.setAttribute('class', 'descricao');
-             divCardAcao.setAttribute('class', 'acoes');
 
-             divCardTRst.appendChild(labelRegistro);
-             divCardTRst.appendChild(registro);
+      /*------------------CARD DE RECADOS------------------------- */
+      let sectionCard = document.createElement("section");
+      let divCardTtl = document.createElement("div");
+      let divCardTRst = document.createElement("div");
+      let divCardDsc = document.createElement("div");
+      let divCardAcao = document.createElement("div");
+      let labelRegistro = document.createElement("label");
+      let registro = document.createElement("p");
+      let labelTitulo = document.createElement("label");
+      let titulo = document.createElement("p");
+      let labelDescricao = document.createElement("label");
+      let descricao = document.createElement("p");
+      let labelAcao = document.createElement("label");
+      let acoes = document.createElement("td");
 
-             divCardTtl.appendChild(labelTitulo);
-             divCardTtl.appendChild(titulo);
+      divCardTtl.setAttribute("class", "titulo-card");
+      divCardTRst.setAttribute("class", "registro");
+      divCardDsc.setAttribute("class", "descricao");
+      divCardAcao.setAttribute("class", "acoes");
 
-             divCardDsc.appendChild(labelDescricao);
-             divCardDsc.appendChild(descricao);
+      divCardTRst.appendChild(labelRegistro);
+      divCardTRst.appendChild(registro);
 
-             divCardAcao.appendChild(labelAcao);
-             divCardAcao.appendChild(acoes);
+      divCardTtl.appendChild(labelTitulo);
+      divCardTtl.appendChild(titulo);
 
-             sectionCard.appendChild(divCardTRst);
-             sectionCard.appendChild(divCardTtl);
-             sectionCard.appendChild(divCardDsc);
-             sectionCard.appendChild(divCardAcao);
-            
-             cardDados.appendChild(sectionCard);
+      divCardDsc.appendChild(labelDescricao);
+      divCardDsc.appendChild(descricao);
 
-             sectionCard.setAttribute('class', 'card');
-             labelRegistro.setAttribute('id', dadosrecados[indice]);
-             labelRegistro.innerHTML = `Id: `
-             registro.innerHTML = dadosrecados[indice].indice ;
-             labelTitulo.innerHTML = `Título: `
-             titulo.innerHTML = dadosrecados[indice].titulorecados;
-             labelDescricao.innerHTML = `Descrição: `
-             descricao.innerHTML = dadosrecados[indice].descricaorecados;
-             labelAcao.innerHTML = `Ações: `
-             acoes.innerHTML = `
+      divCardAcao.appendChild(labelAcao);
+      divCardAcao.appendChild(acoes);
+
+      sectionCard.appendChild(divCardTRst);
+      sectionCard.appendChild(divCardTtl);
+      sectionCard.appendChild(divCardDsc);
+      sectionCard.appendChild(divCardAcao);
+
+      cardDados.appendChild(sectionCard);
+
+      sectionCard.setAttribute("class", "card");
+      labelRegistro.setAttribute("id", dadosrecados[indice]);
+      labelRegistro.innerHTML = `Id: `;
+      registro.innerHTML = dadosrecados[indice].indice;
+      labelTitulo.innerHTML = `Título: `;
+      titulo.innerHTML = dadosrecados[indice].titulorecados;
+      labelDescricao.innerHTML = `Descrição: `;
+      descricao.innerHTML = dadosrecados[indice].descricaorecados;
+      labelAcao.innerHTML = `Ações: `;
+      acoes.innerHTML = `
              <td><button type="button" value="" class="inf_botao" onclick="prepararEdicao(${indice})" id="inf_botao_editar"><img src="imagens/edit.ico"></button></td>
              <td><button type="button" value="" class="inf_botao" onclick="apagarRegistro(${indice})" id="inf_botao_apagar"><img src="imagens/recycle.ico"></button></td>
-                                     `
-
-             ;
-
-        }
+                                     `;
     }
+  }
 }
 
-function limparCampos(){
-    
-    inputTitulo.value = '';
-    inputDescricao.value = '';
-    inputTitulo.focus();
+function limparCampos() {
+  inputTitulo.value = "";
+  inputDescricao.value = "";
+  inputTitulo.focus();
 }
 
-
-function salvarNoStorage(lst_recados){
-
-    localStorage.setItem('dados-usuario', JSON.stringify(lst_recados));
-    
+function salvarNoStorage(lst_recados) {
+  localStorage.setItem("dados-usuario", JSON.stringify(lst_recados));
 }
 
-function logOut(){
-    window.sessionStorage.removeItem('login');
-    window.sessionStorage.removeItem('dados-usuario');
-    window.location = './sign-out.html';
-};
+function logOut() {
+  window.sessionStorage.removeItem("login");
+  window.sessionStorage.removeItem("dados-usuario");
+  window.location = "./sign-out.html";
+}
 
+function pegarDadosStorage() {
+  let dadosStorage = JSON.parse(localStorage.getItem("dados-usuario")) || [];
 
-function pegarDadosStorage(){
-
-    
-    let dadosStorage = JSON.parse(localStorage.getItem('dados-usuario')) || [];
-
-    if(dadosStorage){
-        for(let registro of dadosStorage){
-            salvarNaTabela(registro.recados);
-        }
+  if (dadosStorage) {
+    for (let registro of dadosStorage) {
+      salvarNaTabela(registro.recados);
     }
+  }
 
-    return
+  return;
 }
 
-function apagarRegistro(registroID){
-    
-    let confirma = window.confirm(`Tem certeza que deseja remover o recado de registro ID ${registroID+1}?`);
+function apagarRegistro(registroID) {
+  let confirma = window.confirm(
+    `Tem certeza que deseja remover o recado de registro ID ${registroID + 1}?`
+  );
 
-    if(confirma){
+  if (confirma) {
+    listaRecados.splice(registroID, 1);
 
-    
-        listaRecados.splice(registroID, 1);
-        
-        salvarNoStorage(listaUsuarios);
-        window.location.reload();
-        return;
-    }else{
-        return;
-    }     
-}
-
-function cancelarEdicao(){
-    botaoCancelar.setAttribute('onclick', limparCampos())
-    botaoSalvar.setAttribute('style', 'display: inline-block');
-    botaoAtualizar.setAttribute('style', 'display: none');
-    botaoCancelar.setAttribute('style', 'display: none');
-    
-}
-
-function prepararEdicao(registroID){
-    botaoSalvar.setAttribute('style', 'display: none');
-    botaoAtualizar.setAttribute('style', 'display: inline-block');
-    botaoAtualizar.setAttribute('onclick', `atualizarRegistro(${registroID})`);
-    botaoCancelar.setAttribute('style', 'display: inline-block');
-    botaoCancelar.setAttribute('onclick', `cancelarEdicao()`);
-    
-    inputTitulo.value = listaRecados[registroID].titulorecados;
-    inputDescricao.value = listaRecados[registroID].descricaorecados;
-    
-}
-
-function atualizarRegistro(registroID){
-    
-    let novoTitulo = inputTitulo.value;
-    let novaDescricao = inputDescricao.value;
-
-    let recadoEditado = listaRecados[registroID];
-
-    recadoEditado.descricaorecados = novaDescricao;
-    recadoEditado.titulorecados = novoTitulo;
-
-    listaRecados.splice(registroID, 1, recadoEditado);
-    window.localStorage.setItem('dados-usuario', JSON.stringify(listaUsuarios));
+    salvarNoStorage(listaUsuarios);
     window.location.reload();
+    return;
+  } else {
+    return;
+  }
+}
+
+function cancelarEdicao() {
+  botaoCancelar.setAttribute("onclick", limparCampos());
+  botaoSalvar.setAttribute("style", "display: inline-block");
+  botaoAtualizar.setAttribute("style", "display: none");
+  botaoCancelar.setAttribute("style", "display: none");
+}
+
+function prepararEdicao(registroID) {
+  botaoSalvar.setAttribute("style", "display: none");
+  botaoAtualizar.setAttribute("style", "display: inline-block");
+  botaoAtualizar.setAttribute("onclick", `atualizarRegistro(${registroID})`);
+  botaoCancelar.setAttribute("style", "display: inline-block");
+  botaoCancelar.setAttribute("onclick", `cancelarEdicao()`);
+
+  inputTitulo.value = listaRecados[registroID].titulorecados;
+  inputDescricao.value = listaRecados[registroID].descricaorecados;
+}
+
+function atualizarRegistro(registroID) {
+  let novoTitulo = inputTitulo.value;
+  let novaDescricao = inputDescricao.value;
+
+  let recadoEditado = listaRecados[registroID];
+
+  recadoEditado.descricaorecados = novaDescricao;
+  recadoEditado.titulorecados = novoTitulo;
+
+  listaRecados.splice(registroID, 1, recadoEditado);
+  window.localStorage.setItem("dados-usuario", JSON.stringify(listaUsuarios));
+  window.location.reload();
 }

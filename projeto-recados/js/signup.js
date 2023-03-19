@@ -92,7 +92,6 @@ function enviardados() {
     alert("Verifique se os campos estão preenchidos da forma correta!");
     return;
   } else {
-    
     salvardados();
     limparDados();
   }
@@ -110,7 +109,7 @@ function salvardados() {
 
   for (const indice in pegadados) {
     if (pegadados[indice].usuario === dados.usuario) {
-      var  aviso = alert("Usuário já existe!");
+      var aviso = alert("Usuário já existe!");
       existeDados = true;
       return aviso;
     }
@@ -119,9 +118,7 @@ function salvardados() {
     pegadados.unshift(dados);
     const userString = JSON.stringify(pegadados);
     localStorage.setItem("dados-usuario", userString);
-    var  aviso =alert(
-      "Dados criados com sucesso!"
-    );
+    var aviso = alert("Dados criados com sucesso!");
     window.location.href = "index.html";
     return aviso;
   }

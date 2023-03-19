@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./imagens/msg.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Recados - Cadastro</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./imagens/msg.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Recados - Cadastro </title>
-</head>
-
-<body>
+  <body>
     <main class="conteudo">
-        <section class="primeira-coluna"></section>
+      <section class="primeira-coluna"></section>
 
-        <section class="segunda-coluna">
-            <div class="row container-cadastro">
-                <h2 class="titulo">Criar Conta</h2>
+      <section class="segunda-coluna">
+        <div class="row container-cadastro">
+          <h2 class="titulo">Criar Conta</h2>
 
-                <form class="formulario cadastro" id="formulario-cadastro">
+          <form class="formulario cadastro" id="formulario-cadastro">
+            <label for="input-email" id="label-email">E-mail:</label>
+            <input
+              type="email"
+              placeholder="Cadastre seu e-mail"
+              class="cadastro"
+              id="input-email"
+            />
 
-                    <label for="input-email" id="label-email">E-mail:</label>
-                    <input type="email" placeholder="Cadastre seu e-mail" class="cadastro" id="input-email">
+            <label for="input-senha" id="label-senha">Senha:</label>
+            <input
+              type="password"
+              placeholder="Cadastre sua senha"
+              class="cadastro"
+              id="input-senha"
+            />
 
-                    <label for="input-senha" id="label-senha">Senha:</label>
-                    <input type="password" placeholder="Cadastre sua senha" class="cadastro" id="input-senha">
+            <label for="input-confirma-senha" id="label-confirma-senha"
+              >Confirme a senha:</label
+            >
+            <input
+              type="password"
+              placeholder="Repita a senha cadastrada"
+              class="cadastro"
+              id="input-confirma-senha"
+            />
 
-                    <label for="input-confirma-senha" id="label-confirma-senha">Confirme a senha:</label>
-                    <input type="password" placeholder="Repita a senha cadastrada" class="cadastro" id="input-confirma-senha">
-
-                    
-                    <input type="submit" value="Criar Conta Agora" class="btn-cadastro" id="btn-cadastrar">
-                   
-                </form>
-                <span>Para retornar a pagina de login: <a href="./index.html">Clique aqui</a></span>
-            </div>
-        </section>
+            <input
+              type="submit"
+              value="Criar Conta Agora"
+              class="btn-cadastro"
+              id="btn-cadastrar"
+            />
+          </form>
+          <span
+            >Para retornar a pagina de login:
+            <a href="./index.html">Clique aqui</a></span
+          >
+        </div>
+      </section>
     </main>
     <script src="./js/signup.js"></script>
-</body>
-
+  </body>
 </html>
