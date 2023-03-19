@@ -23,7 +23,19 @@ body{
   width: 100vw;
   position: relative;
 }
+#header{
+  background-color:rgba(206, 149, 132, 0.4);
+  display: flex;
+  flex-direction: row;
+  color: black;
+  padding: 13px;
+  font-size: x-large;
+  z-index: 999px;
+}
 
+span{
+  color: blue;
+}
 img{
   width: 30px;
   height: 30px;

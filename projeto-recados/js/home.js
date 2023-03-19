@@ -8,6 +8,7 @@ if (!login) {
 let usuario = window.sessionStorage.getItem("dados-usuario");
 let listaUsuarios = JSON.parse(window.localStorage.getItem("dados-usuario"));
 let indiceUsuario;
+let user = document.querySelector('#usuario');
 
 for (const indice in listaUsuarios) {
   if (listaUsuarios[indice].usuario == usuario) {
@@ -31,6 +32,8 @@ let tabelaDados = document.querySelector("#tabela-registros");
 
 let cardDados = document.querySelector("#row-card");
 
+
+
 /////////////////////*************EVENTOS****************///////////////////////////
 
 formulario.addEventListener("submit", (e) => {
@@ -39,7 +42,12 @@ formulario.addEventListener("submit", (e) => {
   adicionarNovoRegistro();
 });
 
-document.addEventListener("DOMContentLoaded", salvarNaTabela(listaRecados));
+document.addEventListener("DOMContentLoaded", (e) => {
+    e.preventDefault();
+    
+    exibirUser();
+    salvarNaTabela(listaRecados);
+});
 
 botaoSair.addEventListener("click", logOut);
 
@@ -101,6 +109,9 @@ function salvarNaTabela(dadosrecados) {
 
              ;*/
 
+     /*-----------------usuário do header------------------------*/
+     
+
       /*------------------CARD DE RECADOS------------------------- */
       let sectionCard = document.createElement("section");
       let divCardTtl = document.createElement("div");
@@ -155,6 +166,16 @@ function salvarNaTabela(dadosrecados) {
                                      `;
     }
   }
+}
+
+function exibirUser(){
+    let divUsuario = document.createElement("div");
+     let userUser = document.createElement("p");
+     divUsuario.setAttribute("class", "")
+     userUser.setAttribute("class", "usuarioNaw")
+     divUsuario.appendChild(userUser);
+     userUser.innerHTML = `Bem vindo: <span>${usuario}</span>`;
+     user.appendChild(divUsuario);
 }
 
 function limparCampos() {
