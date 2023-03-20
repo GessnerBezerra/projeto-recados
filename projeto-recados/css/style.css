@@ -24,13 +24,16 @@ body{
   position: relative;
 }
 #header{
-  background-color:rgba(206, 149, 132, 0.4);
+  background-color:rgba(206, 149, 132, 0.8);
   display: flex;
   flex-direction: row;
   color: black;
   padding: 13px;
   font-size: x-large;
-  z-index: 999px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
 }
 
 span{
@@ -271,6 +274,7 @@ h1{
 section#principal{
  margin-left: 50px;
  margin-right: 20px;
+ padding: 5%;
 }
 
 button.inf_botao{
@@ -334,10 +338,10 @@ input#botao_cancelar{
 }
 
 #botaoSair {
-  width: 5vw;
-  height: 3.5vh;
-  border: 0;
-  border-radius: 20px;
+  width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
   background-color: #18d3c3;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -348,17 +352,19 @@ input#botao_cancelar{
 }
 
 #botaoSair::after {
-  content: " ";
-  width: 60%;
-  height: 2px;
+  content: "";
+  top: 0.05px;
+  z-index: -1;
+  width: 53px;
+  height: 53px;
   background-color: #a63232;
   position: absolute;
-  left: 1vw;
-  bottom: 0;
+  left: -0.1vw;
   transform: scaleX(0);
-  transform-origin:unset;
-  transition: transform .25s ease;
+  transform-origin:center;
+  transition: transform .30s linear;
   cursor: pointer;
+  border-radius: 50px 50px;
 }
 
 #botaoSair:hover::after {
